@@ -41,7 +41,7 @@ elif [ "${1}" == '-bs' ]; then
     shift
 
     while mapfile -t -n 4 ary && ((${#ary[@]})); do
-        printf '%s\n' "${ary[@]}" | sed -e '4d' -e '2d' -e '1s/\t.*//' | tac | tr '\n' '\t' | sed 's/$/\n/' | __de_tab
+        printf '%s\n' "${ary[@]}" | sed -e '4d' -e '2d' -e '1s/\t.*//' | tac | tr '\n' '\t' | sed 's/$/\n/' | sed -e 's/\t$//' | __de_tab
     done < "${1}" | __rempty | __sort
 
 elif [ "${1}" == '-h' ]; then

@@ -52,10 +52,10 @@ Foo: The bar: 00000-00000-00000
 `-bs` for Bundle Stars weirdness, as encountered when copying from their web page. That is:
 
 ```none
-<KEY>
-Copy
 <NAME><TAB><NAME>
 
+<KEY>
+Copy
 ```
 
 Example:
