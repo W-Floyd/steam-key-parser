@@ -59,14 +59,24 @@ elif [ "${1}" == '-bk' ]; then
     while mapfile -t -n 2 ary && ((${#ary[@]})); do
         printf '%s\n' "${ary[@]}" | sed -e '2d' | sed 's/\(.*\) : \([^ ]*\)$/\2   \1/'
     done < "${1}" | __rempty | __sort
+elif [ "${1}" == '-i' ]; then
+
+    shift
+
+    while mapfile -t -n 3 ary && ((${#ary[@]})); do
+        printf '%s\n' "${ary[@]}" | tac | __rempty | tr '\n' '\t' | sed -e 's/$/\n/' | sed -e 's/\t$//' | __de_tab
+    done < "${1}" | __rempty | __sort
 
 else
+    echo './key_formatter.sh <METHOD> file'
     echo 'See README for more info'
     echo
     echo '-t for KEY<TAB>Name'
     echo '-c for Name: KEY'
     echo '-bs for Bundle Stars weirdness...'
     echo '-h for Humble Bundle weirdness...'
+    echo '-bk for Bunch Keys (Name : KEY)'
+    echo '-i for IndieGala'
 fi
 
 exit

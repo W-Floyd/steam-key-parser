@@ -8,13 +8,13 @@ A simple set of scripts to parse key lists as provided by various bundle service
 
 Will output all keys in the format:
 
-```
+```none
 <KEY>   <NAME>
 ```
 
 Example:
 
-```
+```none
 00000-00000-00000   Foo
 00000-00000-00000   Foo: The bar
 ```
@@ -30,7 +30,8 @@ OPTION is one of:
 `-t` for `<KEY><TAB><Name>`
 
 Example:
-```
+
+```none
 00000-00000-00000	Foo
 00000-00000-00000	Foo: The bar
 ```
@@ -41,7 +42,7 @@ Example:
 
 Example:
 
-```
+```none
 Foo: 00000-00000-00000
 Foo: The bar: 00000-00000-00000
 ```
@@ -50,7 +51,7 @@ Foo: The bar: 00000-00000-00000
 
 `-bs` for Bundle Stars weirdness, as encountered when copying from their web page. That is:
 
-```
+```none
 <KEY>
 Copy
 <NAME><TAB><NAME>
@@ -59,7 +60,7 @@ Copy
 
 Example:
 
-```
+```none
 00000-00000-00000
 Copy
 Foo	Foo
@@ -74,7 +75,7 @@ Foo: The bar	Foo: The bar
 
 `-h` for Humble Bundle weirdness, as encountered when copying from their web page. That is:
 
-```
+```none
 <NAME>
 <BUNDLE>
 
@@ -83,7 +84,7 @@ Foo: The bar	Foo: The bar
 
 Example:
 
-```
+```none
 Foo
 Tux Bundle
 
@@ -98,18 +99,39 @@ Tux Bundle
 
 `-bk` for Bunch Keys, as emailed. That is:
 
-```
+```none
 <NAME> : <KEY>
 
 ```
 
 Example:
 
-```
+```none
 Foo : 00000-00000-00000
 
 Foo: The bar : 00000-00000-00000
 
+```
+
+### IndieGala
+
+`-i` for IndieGala, as encountered when copying from their web page. That is:
+
+```none
+<NAME>
+
+<KEY>
+```
+
+Example:
+
+```none
+Foo
+
+00000-00000-00000
+Foo: The bar
+
+00000-00000-00000
 ```
 
 ## Key Lister
@@ -120,20 +142,20 @@ So you tell your friends what you've got to offer.
 
 Where FILE holds keys like so:
 
-```
+```none
 <KEY>   <NAME>
 ```
 
 Example:
 
-```
+```none
 00000-00000-00000   Foo
 00000-00000-00000   Foo: The bar
 ```
 
 Output in all cases will be like so:
 
-```
+```none
 <QUANTITY> x <NAME>
 ```
 
@@ -141,14 +163,14 @@ Where QUANTITY is zero padded according to the largest number of duplicate keys 
 
 Output with `-q` is sorted by quantity, like so:
 
-```
+```none
 15 x Foo: The bar
 01 x Foo
 ```
 
 Without `-q` is sorted by name, like so:
 
-```
+```none
 01 x Foo
 15 x Foo: The bar
 ```
