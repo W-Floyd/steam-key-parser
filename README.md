@@ -138,7 +138,7 @@ Foo: The bar
 
 So you tell your friends what you've got to offer.
 
-`key_lister.sh <FILE> -q`
+`key_lister.sh <FILE> [-q|-n]`
 
 Where FILE holds keys like so:
 
@@ -153,7 +153,7 @@ Example:
 00000-00000-00000   Foo: The bar
 ```
 
-Output in all cases will be like so:
+Output in all cases (except with `-n`) will be like so:
 
 ```none
 <QUANTITY> x <NAME>
@@ -168,7 +168,14 @@ Output with `-q` is sorted by quantity, like so:
 01 x Foo
 ```
 
-Without `-q` is sorted by name, like so:
+Output with `-n` has no quantity, and is sorted by name, like so:
+
+```none
+Foo
+Foo: The bar
+```
+
+Without any option is sorted by name, like so:
 
 ```none
 01 x Foo

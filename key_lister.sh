@@ -12,6 +12,8 @@ done | {
 
 if [ "${2}" == '-q' ]; then
     cat | sort -r
+elif [ "${2}" == '-n' ]; then
+    cat | sed 's/^[^ ]* x //' | sort
 else
     cat | sort -k3
 fi
